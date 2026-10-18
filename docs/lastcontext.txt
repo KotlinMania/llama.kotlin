@@ -385,7 +385,7 @@
 
   Updating project flags
 
-  I've updated the BenchMain flags, focusing on ZLib.kotlin located at /Volumes/stuff/
+  I've updated the BenchMain flags, focusing on ZLib.kotlin located at 
   Projects/ZLib.kotlin, with the feature/zip-reader branch. I modified several files,
   including InflateStream.kt and ZipReader.kt, where we had previously added features and
   then moved some functionality upstream for a rewrite using km-io.
@@ -407,14 +407,14 @@
 
   In ZLib.kotlin, the files include InflateStream.kt, ZipReader.kt, and ZLibCli.kt.
 
-  For simd-alphatensor-kotlin, it remains in its own repo at /Volumes/stuff/Projects/simd-
+  For simd-alphatensor-kotlin, it remains in its own repo at ../simd-
   alphatensor-kotlin; we referenced it but did not integrate the binary.
 
   Lastly, we've confirmed the removal of src/commonMain/resources/alphatensor from llama.
 
 > Here’s where everything lives right now.
 
-  llama.kotlin (/Volumes/stuff/Projects/llama.kotlin)
+  llama.kotlin (.)
 
   - Core bitwise + engine
       - src/commonMain/kotlin/io.github.kotlinmania.llama.lang/bitwise/BitShiftEngine.kt
@@ -441,7 +441,7 @@
       - tools/alphatensor-scripts/ (print_equations_v2.py)
 
   ZLib.kotlin (upstream; working branch feature/zip-reader)
-  /Volumes/stuff/Projects/ZLib.kotlin
+  ../ZLib.kotlin
 
   - Inflate/Deflate core (arithmetic)
       - src/commonMain/kotlin/io.github.kotlinmania.llama.lib/inflate/InflateStream.kt (includes
@@ -457,7 +457,7 @@
       - src/commonTest/kotlin/io.github.kotlinmania.llama.lib/** (inflate/zip tests)
 
   simd-alphatensor-kotlin (reference only)
-  /Volumes/stuff/Projects/simd-alphatensor-kotlin
+  ../simd-alphatensor-kotlin
 
   - codegen/ (Rust), data/ (factorizations_r.npz, algorithms.txt), scripts/
   - We are not importing files directly; used as spec/reference.
@@ -473,7 +473,7 @@
 > Yes — I resurrected the CLI in ZLib.kotlin.
 
   - Branch: feature/zip-reader
-  - Path: /Volumes/stuff/Projects/ZLib.kotlin/src/nativeMain/kotlin/io.github.kotlinmania.llama.lib/cli/
+  - Path: ../ZLib.kotlin/src/nativeMain/kotlin/io.github.kotlinmania.llama.lib/cli/
   ZLibCli.kt
   - Commands (Native target):
       - compress | deflate <in> <out.zz> [level]
@@ -624,7 +624,7 @@
 ▌
 ▌ • Ran
 ▌   └ set -e
-▌     cd /Volumes/stuff/Projects/ZLib.kotlin
+▌     cd ../ZLib.kotlin
 ▌     git checkout -b feature/zip-reader
 ▌
 ▌
@@ -965,7 +965,7 @@
 ▌     80    +}
 ▌     81    +
 ▌
-▌ • Ran cd /Volumes/stuff/Projects/ZLib.kotlin && ./gradlew -q build -PwithTests=true
+▌ • Ran cd ../ZLib.kotlin && ./gradlew -q build -PwithTests=true
 ▌   └
 ▌     FAILURE: Build failed with an exception.
 ▌
@@ -978,10 +978,10 @@
 ▌
 ▌     BUILD FAILED in 1m 1s
 ▌
-▌ • Deleted /Volumes/stuff/Projects/ZLib.kotlin/src/commonMain/kotlin/io.github.kotlinmania.llama.lib/cli/
+▌ • Deleted ../ZLib.kotlin/src/commonMain/kotlin/io.github.kotlinmania.llama.lib/cli/
 ▌ ZLibCli.kt (+0 -0)
 ▌
-▌ • Ran cd /Volumes/stuff/Projects/ZLib.kotlin && ./gradlew -q build -PwithTests=true
+▌ • Ran cd ../ZLib.kotlin && ./gradlew -q build -PwithTests=true
 ▌   └
 ▌     FAILURE: Build failed with an exception.
 ▌
@@ -995,7 +995,7 @@
 ▌     BUILD FAILED in 54s
 ▌
 ▌ • Ran
-▌   └ cd /Volumes/stuff/Projects/ZLib.kotlin && ./gradlew -q ktlintKotlinScriptFormat
+▌   └ cd ../ZLib.kotlin && ./gradlew -q ktlintKotlinScriptFormat
 ▌ && ./
 ▌         gradlew -q build -PwithTests=true
 ▌
@@ -1014,14 +1014,14 @@
 ▌   └ Read ktlintCommonMainSourceSetCheck.txt, ktlintCommonTestSourceSetCheck.txt,
 ▌          ArithmeticBitwiseOps.kt
 ▌
-▌ • Edited /Volumes/stuff/Projects/ZLib.kotlin/src/commonMain/kotlin/io.github.kotlinmania.llama.lib/
+▌ • Edited ../ZLib.kotlin/src/commonMain/kotlin/io.github.kotlinmania.llama.lib/
 ▌ bitwise/
 ▌ ArithmeticBitwiseOps.kt (+1 -0)
 ▌     1      @file:Suppress("unused", "UNUSED_PARAMETER")
 ▌     2     +
 ▌     3      package io.github.kotlinmania.llama.lib.bitwise
 ▌
-▌ • Edited /Volumes/stuff/Projects/ZLib.kotlin/src/commonMain/kotlin/io.github.kotlinmania.llama.lib/
+▌ • Edited ../ZLib.kotlin/src/commonMain/kotlin/io.github.kotlinmania.llama.lib/
 ▌ bitwise/
 ▌ BitShiftEngine.kt (+1 -0)
 ▌     1      @file:Suppress("unused", "UNUSED_PARAMETER")
@@ -1031,7 +1031,7 @@
 ▌ • Explored
 ▌   └ Read DeflateStream.kt
 ▌
-▌ • Ran cd /Volumes/stuff/Projects/ZLib.kotlin && ./gradlew -q build -PwithTests=true
+▌ • Ran cd ../ZLib.kotlin && ./gradlew -q build -PwithTests=true
 ▌   └
 ▌     FAILURE: Build failed with an exception.
 ▌
@@ -1047,7 +1047,7 @@
 ▌ • Explored
 ▌   └ Read ktlintCommonTestSourceSetCheck.txt, InflateErrorCasesTest.kt
 ▌
-▌ • Ran cd /Volumes/stuff/Projects/ZLib.kotlin && ./gradlew -q build -PwithTests=true
+▌ • Ran cd ../ZLib.kotlin && ./gradlew -q build -PwithTests=true
 ▌   └
 ▌     FAILURE: Build completed with 2 failures.
 ▌
@@ -1063,7 +1063,7 @@
 ▌ • Explored
 ▌   └ Read ktlintCommonMainSourceSetCheck.txt, ktlintCommonTestSourceSetCheck.txt
 ▌
-▌ • Edited /Volumes/stuff/Projects/ZLib.kotlin/src/commonMain/kotlin/io.github.kotlinmania.llama.lib/
+▌ • Edited ../ZLib.kotlin/src/commonMain/kotlin/io.github.kotlinmania.llama.lib/
 ▌ deflate/
 ▌ DeflateStream.kt (+2 -2)
 ▌     9      import io.github.kotlinmania.llama.lib.common.TREE_EXTRA_LBITS
@@ -1076,7 +1076,7 @@
 ▌     15    -import io.github.kotlinmania.llama.lib.common.Z_STREAM_ERROR
 ▌     16
 ▌
-▌ • Ran cd /Volumes/stuff/Projects/ZLib.kotlin && ./gradlew -q build -PwithTests=true
+▌ • Ran cd ../ZLib.kotlin && ./gradlew -q build -PwithTests=true
 ▌   └
 ▌     FAILURE: Build failed with an exception.
 ▌
@@ -1089,7 +1089,7 @@
 ▌
 ▌     BUILD FAILED in 54s
 ▌
-▌ • Edited /Volumes/stuff/Projects/ZLib.kotlin/src/commonTest/kotlin/io.github.kotlinmania.llama.lib/
+▌ • Edited ../ZLib.kotlin/src/commonTest/kotlin/io.github.kotlinmania.llama.lib/
 ▌ inflate/
 ▌ test/InflateErrorCasesTest.kt (+1 -1)
 ▌     3      import io.github.kotlinmania.llama.lib.common.Z_DATA_ERROR
@@ -1100,7 +1100,7 @@
 ▌     7      import kotlin.test.Test
 ▌
 ▌ • Ran
-▌   └ cd /Volumes/stuff/Projects/ZLib.kotlin && ./gradlew -q build -PwithTests=true && git
+▌   └ cd ../ZLib.kotlin && ./gradlew -q build -PwithTests=true && git
 ▌         add -A && git commit -m "feat(zip): add minimal ZIP reader (STORE, DEFLATE raw)
 ▌ +
 ▌         InflateStream.inflateRaw; add tests; fix ktlint" && git status -sb
@@ -1110,7 +1110,7 @@
 ▌ without
 ▌   pre‑decompression.
 ▌
-▌   What I did upstream (in /Volumes/stuff/Projects/ZLib.kotlin)
+▌   What I did upstream (in ../ZLib.kotlin)
 ▌
 ▌   - New branch: feature/zip-reader
 ▌   - InflateStream.inflateRaw
@@ -1179,7 +1179,7 @@
 ▌   definition in the nativeMain path, which I want to inspect.
 ▌
 ▌ • Ran
-▌   └ sed -n '1,240p' /Volumes/stuff/Projects/ZLib.kotlin/src/nativeMain/kotlin/io.github.kotlinmania.llama.
+▌   └ sed -n '1,240p' ../ZLib.kotlin/src/nativeMain/kotlin/io.github.kotlinmania.llama.
 ▌         zlib/cli/ZLibCli.kt || echo 'no nativeMain CLI'
 ▌
 ▌ • I'm considering writing a small harness script or documenting a command to test
@@ -1230,7 +1230,7 @@
 ▌ entries.
 ▌   Finally, I’ll commit these changes to the upstream.
 ▌
-▌ • Added /Volumes/stuff/Projects/ZLib.kotlin/src/nativeMain/kotlin/io.github.kotlinmania.llama.lib/cli/
+▌ • Added ../ZLib.kotlin/src/nativeMain/kotlin/io.github.kotlinmania.llama.lib/cli/
 ▌ ZLibCli.kt (+109 -0)
 ▌     1     +package io.github.kotlinmania.llama.lib.cli
 ▌     2     +
@@ -1359,21 +1359,21 @@
 ▌     109   +
 ▌
 ▌ • Ran
-▌   └ cd /Volumes/stuff/Projects/ZLib.kotlin && ./gradlew -q build -PwithTests=true &&
+▌   └ cd ../ZLib.kotlin && ./gradlew -q build -PwithTests=true &&
 ▌         git add -A && git commit -m "feat(cli): add unzip list/extract commands; wire to
 ▌         ZipReader; keep compress/decompress" && git status -sb
-▌     e: file:///Volumes/stuff/Projects/ZLib.kotlin/src/nativeMain/kotlin/io.github.kotlinmania.llama.lib/
+▌     e: file://../ZLib.kotlin/src/nativeMain/kotlin/io.github.kotlinmania.llama.lib/
 ▌     cli/ZLibCli.kt:7:23 Unresolved reference 'zip'.
-▌     e: file:///Volumes/stuff/Projects/ZLib.kotlin/src/nativeMain/kotlin/io.github.kotlinmania.llama.lib/
+▌     e: file://../ZLib.kotlin/src/nativeMain/kotlin/io.github.kotlinmania.llama.lib/
 ▌     cli/ZLibCli.kt:27:35 Argument type mismatch: actual type is 'Unit', but 'K (of fun
 ▌ <K>
 ▌     WHEN_CALL)' was expected.
-▌     e: file:///Volumes/stuff/Projects/ZLib.kotlin/src/nativeMain/kotlin/io.github.kotlinmania.llama.
+▌     e: file://../ZLib.kotlin/src/nativeMain/kotlin/io.github.kotlinmania.llama.
 ▌     zlib/cli/ZLibCli.kt:37:13 Argument type mismatch: actual type is 'R (of fun <T :
 ▌     AutoCloseable?, R> T.use)', but 'K (of fun <K> WHEN_CALL)' was expected.
-▌     e: file:///Volumes/stuff/Projects/ZLib.kotlin/src/nativeMain/kotlin/io.github.kotlinmania.llama.lib/
+▌     e: file://../ZLib.kotlin/src/nativeMain/kotlin/io.github.kotlinmania.llama.lib/
 ▌     cli/ZLibCli.kt:37:40 Cannot infer type for this parameter. Specify it explicitly.
-▌     e: file:///Volumes/stuff/Projects/ZLib.kotlin/src/nativeMain/kotlin/io.github.kotlinmania.llama.
+▌     e: file://../ZLib.kotlin/src/nativeMain/kotlin/io.github.kotlinmania.llama.
 ▌     zlib/cli/ZLibCli.kt:37:40 Unresolved reference. None of the following candidates is
 ▌     applicable because of a receiver type mismatch:
 ▌     … +62 lines
@@ -1420,7 +1420,7 @@
 ▌ Let’s
 ▌   get started!
 ▌
-▌ • Added /Volumes/stuff/Projects/ZLib.kotlin/src/commonMain/kotlin/io.github.kotlinmania.llama.lib/zip/
+▌ • Added ../ZLib.kotlin/src/commonMain/kotlin/io.github.kotlinmania.llama.lib/zip/
 ▌ ZipReader.kt (+147 -0)
 ▌     1     +package io.github.kotlinmania.llama.lib.zip
 ▌     2     +
@@ -1574,12 +1574,12 @@
 ▌     147   +
 ▌
 ▌ • Ran
-▌   └ cd /Volumes/stuff/Projects/ZLib.kotlin && ./gradlew -q build -PwithTests=true && git
+▌   └ cd ../ZLib.kotlin && ./gradlew -q build -PwithTests=true && git
 ▌         add -A && git commit -m "feat(zip): add ZipReader (STORE, DEFLATE raw) and CLI
 ▌         unzip commands" && git status -sb
-▌     e: file:///Volumes/stuff/Projects/ZLib.kotlin/src/commonMain/kotlin/io.github.kotlinmania.llama.lib/
+▌     e: file://../ZLib.kotlin/src/commonMain/kotlin/io.github.kotlinmania.llama.lib/
 ▌     zip/ZipReader.kt:35:25 Cannot infer type for this parameter. Specify it explicitly.
-▌     e: file:///Volumes/stuff/Projects/ZLib.kotlin/src/commonMain/kotlin/io.github.kotlinmania.llama.lib/
+▌     e: file://../ZLib.kotlin/src/commonMain/kotlin/io.github.kotlinmania.llama.lib/
 ▌     zip/ZipReader.kt:35:25 Unresolved reference. None of the following candidates is
 ▌     applicable because of a receiver type mismatch:
 ▌     fun <T : AutoCloseable?, R> T.use(block: (T) -> R): R
@@ -2290,7 +2290,7 @@
 ▌
 ▌   Updating project flags
 ▌
-▌   I've updated the BenchMain flags, focusing on ZLib.kotlin located at /Volumes/stuff/
+▌   I've updated the BenchMain flags, focusing on ZLib.kotlin located at 
 ▌   Projects/ZLib.kotlin, with the feature/zip-reader branch. I modified several files,
 ▌   including InflateStream.kt and ZipReader.kt, where we had previously added features
 ▌ and
@@ -2316,7 +2316,7 @@
 ▌
 ▌   In ZLib.kotlin, the files include InflateStream.kt, ZipReader.kt, and ZLibCli.kt.
 ▌
-▌   For simd-alphatensor-kotlin, it remains in its own repo at /Volumes/stuff/
+▌   For simd-alphatensor-kotlin, it remains in its own repo at 
 ▌ Projects/simd-
 ▌   alphatensor-kotlin; we referenced it but did not integrate the binary.
 ▌
@@ -2325,7 +2325,7 @@
 ▌
 ▌ > Here’s where everything lives right now.
 ▌
-▌   llama.kotlin (/Volumes/stuff/Projects/llama.kotlin)
+▌   llama.kotlin (.)
 ▌
 ▌   - Core bitwise + engine
 ▌       - src/commonMain/kotlin/io.github.kotlinmania.llama.lang/bitwise/BitShiftEngine.kt
@@ -2353,7 +2353,7 @@
 ▌       - tools/alphatensor-scripts/ (print_equations_v2.py)
 ▌
 ▌   ZLib.kotlin (upstream; working branch feature/zip-reader)
-▌   /Volumes/stuff/Projects/ZLib.kotlin
+▌   ../ZLib.kotlin
 ▌
 ▌   - Inflate/Deflate core (arithmetic)
 ▌       - src/commonMain/kotlin/io.github.kotlinmania.llama.lib/inflate/InflateStream.kt (includes
@@ -2369,7 +2369,7 @@
 ▌       - src/commonTest/kotlin/io.github.kotlinmania.llama.lib/** (inflate/zip tests)
 ▌
 ▌   simd-alphatensor-kotlin (reference only)
-▌   /Volumes/stuff/Projects/simd-alphatensor-kotlin
+▌   ../simd-alphatensor-kotlin
 ▌
 ▌   - codegen/ (Rust), data/ (factorizations_r.npz, algorithms.txt), scripts/
 ▌   - We are not importing files directly; used as spec/reference.
@@ -2385,7 +2385,7 @@
 ▌ > Yes — I resurrected the CLI in ZLib.kotlin.
 ▌
 ▌   - Branch: feature/zip-reader
-▌   - Path: /Volumes/stuff/Projects/ZLib.kotlin/src/nativeMain/kotlin/io.github.kotlinmania.llama.lib/cli/
+▌   - Path: ../ZLib.kotlin/src/nativeMain/kotlin/io.github.kotlinmania.llama.lib/cli/
 ▌   ZLibCli.kt
 ▌   - Commands (Native target):
 ▌       - compress | deflate <in> <out.zz> [level]
@@ -2551,7 +2551,7 @@
 • Explored
   └ Read build.gradle.kts
 
-• Edited /Volumes/stuff/Projects/llama.kotlin/../ZLib.kotlin/build.gradle.kts (+1 -1)
+• Edited ../ZLib.kotlin/build.gradle.kts (+1 -1)
     6      plugins {
     7     -    kotlin("multiplatform") version "2.2.10"
     7     +    kotlin("multiplatform") version "2.2.20"
@@ -2589,7 +2589,7 @@
            p
     4      networkTimeout=10000
 
-• Edited /Volumes/stuff/Projects/llama.kotlin/../ZLib.kotlin/gradle/wrapper/gradle-
+• Edited ../ZLib.kotlin/gradle/wrapper/gradle-
 wrapper.properties (+1 -1)
     2      distributionPath=wrapper/dists
     3     -distributionUrl=https\://services.gradle.org/distributions/gradle-8.14-bin.zip
@@ -2639,19 +2639,19 @@ wrapper.properties (+1 -1)
   and simply run 'gradlew -q build' to get things working again.
 
 • Ran ./gradlew -q build
-  └ e: file:///Volumes/stuff/Projects/llama.kotlin/src/commonMain/kotlin/io.github.kotlinmania.llama.lang/
+  └ e: file://src/commonMain/kotlin/io.github.kotlinmania.llama.lang/
     bitwise/ArrayBitShifts.kt:90:9 Unresolved reference 'runBlocking'.
-    e: file:///Volumes/stuff/Projects/llama.kotlin/src/commonMain/kotlin/ai/
+    e: file://src/commonMain/kotlin/ai/
     solace/klang/bitwise/ArrayBitShifts.kt:93:13 Suspend function 'suspend fun <R>
     coroutineScope(block: suspend CoroutineScope.() -> R): R' can only be called from a
     coroutine or another suspend function.
-    e: file:///Volumes/stuff/Projects/llama.kotlin/src/commonMain/kotlin/ai/
+    e: file://src/commonMain/kotlin/ai/
     solace/klang/bitwise/ArrayBitShifts.kt:112:13 Suspend function 'suspend fun <R>
     coroutineScope(block: suspend CoroutineScope.() -> R): R' can only be called from a
     coroutine or another suspend function.
-    e: file:///Volumes/stuff/Projects/llama.kotlin/src/commonMain/kotlin/io.github.kotlinmania.llama.lang/
+    e: file://src/commonMain/kotlin/io.github.kotlinmania.llama.lang/
     bitwise/ArrayBitShifts.kt:268:9 Unresolved reference 'runBlocking'.
-    e: file:///Volumes/stuff/Projects/llama.kotlin/src/commonMain/kotlin/ai/
+    e: file://src/commonMain/kotlin/ai/
     solace/klang/bitwise/ArrayBitShifts.kt:271:13 Suspend function 'suspend fun <R>
     coroutineScope(block: suspend CoroutineScope.() -> R): R' can only be called from a
     coroutine or another suspend function.

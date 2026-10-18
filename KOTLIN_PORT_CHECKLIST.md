@@ -460,7 +460,7 @@ With the shared klang primitives in place, the remaining work focuses on merge-d
 
 The project is set up as a Kotlin Multiplatform project with the following structure:
 
-- **Root Directory**: /Volumes/stuff/Projects/llama.kotlin
+- **Root Directory**: .
 - **Source Directory**: src/nativeMain/kotlin/io.github.kotlinmania.llama.lamakotlin
 - **Build Configuration**: build.gradle.kts, settings.gradle.kts
 - **Design Documents**: TENSOR_OPERATIONS_DESIGN.md, GGML_COMPUTE_OPS_DESIGN.md, GGUF_IMPLEMENTATION.md (in progress)
