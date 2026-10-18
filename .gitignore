@@ -157,3 +157,4 @@ tools/kotlin-native-prebuilt-macos-aarch64-2.2.20/**/
 tools/astdistance/ast_distance
 tools/ast_distance
 .android-sdk/
+local.properties
